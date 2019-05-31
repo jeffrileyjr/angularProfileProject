@@ -1,21 +1,25 @@
-<!-- <div class="profile_container" *ngFor="let user of profile">
-    <img class="avatar" src="../assets/profileMe.jpg" alt="profile picture">
-    <p class="name">{{user.name }}</p>
-    <p class="contact">{{ user.contactInfo }}</p>
-    <p class="bio">{{ user.bio }}</p>
-    <button (click)="editProfile()">Edit</button>
-  </div> -->
-  <!-- novalidate #form="ngForm" (ngSubmit)="saveProfile(userProfile)" -->
+<!-- novalidate #form="ngForm" (ngSubmit)="saveProfile(userProfile)" -->
 
-<form novalidate #form="ngForm" (ngSubmit)="saveProfile(profile)" class="profile_container">
-  <p class="instructions">
-    Use the form below to update your profile.
-  </p>
+<form  #updateForm="ngForm" (ngSubmit)="saveProfile(updateForm)" class="profile_container">
+  <p class="instructions">Use the form below to update your profile.</p>
+  <!-- <img class="avatar" src="../assets/profileMe.jpg" alt="profile picture">
+  <span>Change photo</span> -->
+
   <label for="name">Name</label>
-  <input type="text" name="newName" placeholder="{{profile.name}}" [(ngModel)]>
-  <label for="contact">Contact</label>
-  <input type="text" name="newName" placeholder="{{profile.contactInfo}}" [(ngModel)]>
+  <input id="name" type="text" [(ngModel)]="profile.name" name="name" />
+
+  <label for="contact-info">Contact</label>
+  <input
+    id="contact-info"
+    type="text"
+    [(ngModel)]="profile.contactInfo"
+    name="contactInfo"
+  />
+
   <label for="bio">Bio</label>
-  <input type="text" name="newName" placeholder="{{profile.bio}}" [(ngModel)]>
+  <textarea id="bio" name="bio" rows="4" [(ngModel)]="profile.bio"></textarea>
+
   <button>Update</button>
 </form>
+
+
