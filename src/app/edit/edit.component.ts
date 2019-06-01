@@ -11,6 +11,7 @@ import { ProfileService } from '../profile.service';
 export class EditComponent implements OnInit {
 
   profile: any;
+  formShowing:boolean = false;
 
   constructor(private profileService: ProfileService) { }
 
@@ -20,6 +21,9 @@ export class EditComponent implements OnInit {
 
   setUserProfile(updatedProfile) {
     this.profileService.editProfile(updatedProfile);
+  }
+  toggleForm(): void {
+    this.formShowing = !this.formShowing;
   }
 
 }

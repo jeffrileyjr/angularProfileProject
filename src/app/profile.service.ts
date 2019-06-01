@@ -6,7 +6,10 @@ import { Router } from "@angular/router";
 })
 export class ProfileService {
 
+  avatarChoices = ["../../assets/pic1.png", "../../assets/pic2.png", '../../assets/pic3.png'];
+
   profile = {
+    avatar: "../../assets/profileMe.jpg",
     name: "Jeff",
     contactInfo: "jeff@notanemail.com",
     bio:

@@ -1,14 +1,28 @@
 <section class="profile_container">
-  <div class="avatar">
-    <img src="../../assets/profileMe.jpg" alt="">
-  </div>
 <form #form="ngForm" (ngSubmit)="setUserProfile(profile)">
-  <p>Use the form below to update your profile.</p>
-  <label for="">Name</label>
+    <div class="avatar" (click)="toggleForm()">
+        <label class="hoverable" for="fileInput">
+        <img src={{profile.avatar}}  alt="Profile Picture">
+        <div class="hover-text" >Change Image</div>
+        <div class="background"></div>
+      </label>
+      </div>
+  <p class="instructions">Use the form below to update your profile.</p>
+  <div class="avatarChoices" *ngIf="formShowing">
+    <input type="radio" name="avatar" value="../assets/pic1.png" [(ngModel)]="profile.avatar">
+    <label class="formLabel pic1"  for="image"><img class="newAvatar" src="../assets/pic1.png" style="width: 80px" alt=""></label>
+    <input type="radio" name="avatar" value="../assets/pic2.png" [(ngModel)]="profile.avatar">
+    <label class="formLabel pic1"  for="image"><img class="newAvatar" src="../assets/pic2.png" style="width: 80px" alt=""></label>
+    <input type="radio" name="avatar" value="../assets/pic3.png" [(ngModel)]="profile.avatar">
+    <label class="formLabel pic1"  for="image"><img class="newAvatar" src="../assets/pic3.png" style="width: 80px" alt=""></label>
+    <input type="radio" name="avatar" value="../assets/profileMe.jpg" [(ngModel)]="profile.avatar">
+    <label class="formLabel pic1"  for="image">No Change</label>
+</div>
+  <label class="formLabel" for="">Name</label>
   <input type="text" name="name" [(ngModel)]="profile.name">
-  <label for="">Contact</label>
+  <label class="formLabel" for="">Contact</label>
   <input type="text" name="contact" [(ngModel)]="profile.contactInfo">
-  <label for="">Bio</label>
+  <label class="formLabel" for="">Bio</label>
   <textarea class="bio" type="text" name="bio" rows="4" [(ngModel)]="profile.bio"></textarea>
   <button>Update</button>
 </form>
