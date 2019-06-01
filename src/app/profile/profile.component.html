@@ -1,7 +1,14 @@
-<div class="profile_container" >
-  <img class="avatar" src="../assets/profileMe.jpg" alt="profile picture">
-  <p class="name">{{profile.name }}</p>
-  <p class="contact">{{ profile.contactInfo }}</p>
-  <p class="bio">{{ profile.bio }}</p>
-  <button (click)="editProfile()">Edit</button>
-</div>
+<body>
+  <section class="profile_container">
+    <div class="avatar">
+      <img src="../../assets/profileMe.jpg" alt="">
+    </div>
+
+    <div class="profile">
+      <p class="name">{{ profile.name }}</p>
+      <p class="contact">{{ profile.contactInfo }}</p>
+      <p class="bio">{{ profile.bio }}</p>
+      <button [routerLink]="['/edit']" routerLinkActive="active">Edit</button>
+    </div>
+  </section>
+</body>

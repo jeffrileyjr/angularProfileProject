@@ -1,27 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 import { ProfileService } from '../profile.service';
-import { UserProfile } from '../user-profile';
+
 
 @Component({
-  selector: 'app-profile',
+  selector: 'profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
 
-  profile: UserProfile;
+  profile: any;
 
-  constructor(private profileService: ProfileService) {
-    this.profile = this.profileService.getUserProfile();
-    console.log(this.profile);
-   }
-
-
+  constructor(private route: ActivatedRoute, private profileService: ProfileService) { }
 
   ngOnInit() {
+    this.profile = this.profileService.getUserProfile();
   }
-  editProfile() {
-    this.profileService.editProfile();
-  }
-
 }

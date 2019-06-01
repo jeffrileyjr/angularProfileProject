@@ -1,31 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { UserProfile } from './user-profile';
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
 
-   profile: UserProfile = {
-      name: 'Jeff',
-      contactInfo: 'jeff@notanemail.com',
-      bio: 'Bearded and bespectacled human being. Dad to twins. Owner of two dogs. Photographer. Coder.'
-    };
-
+  profile = {
+    name: "Jeff",
+    contactInfo: "jeff@notanemail.com",
+    bio:
+      "Bearded and bespectacled human being. Dad to twins. Owner of two dogs. Photographer. Coder."
+  };
   constructor(private router: Router) { }
 
-  getUserProfile(): UserProfile {
+  getUserProfile() {
     return this.profile;
+  } 
+  
+  editProfile(updatedProfile: any): void {
+    this.profile = updatedProfile;
+    this.router.navigate(['/profile']);
   }
 
-  setUserProfile(updatedProfile: UserProfile): UserProfile {
-    this.profile = updatedProfile;
-    console.log(this.profile);
-    console.log(updatedProfile);
-    return this.profile;
-  }
-  editProfile(): void {
-    this.router.navigate(['edit-profile']);
-  }
 }

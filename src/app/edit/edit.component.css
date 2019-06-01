@@ -15,7 +15,12 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.name, .contact, .bio {
+img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  max-width: 100%;
+}
+.name, .contact {
   margin-left: 10px;
 }
 .name {

@@ -11,9 +11,14 @@
 }
 .avatar {
   background-color: #1ECEFD;
-  width: 100%;
+  width: 400px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+}
+img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  max-width: 100%;
 }
 .name, .contact, .bio {
   margin-left: 10px;
